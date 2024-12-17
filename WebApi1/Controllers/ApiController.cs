@@ -21,8 +21,19 @@ namespace Render_Drink_API.Controllers
 		{
 			try
 			{
+				
 				// Get drinks from the Supabase database
-				List<Drink> drinks = _supabaseService.GetDrinks();
+				//List<Drink> drinks = _supabaseService.GetDrinks();
+
+				List<Drink> drinks = new List<Drink>()
+				{
+					new Drink(1, "Coca-Cola", "Soda", "iVBORw0KGgoAAAANSUhEUgAAAAUA..."), // Example base64 string
+					new Drink(2, "Orange Juice", "Juice", "iVBORw0KGgoAAAANSUhEUgAAAAUA..."),
+					new Drink(3, "Water", "Water", "iVBORw0KGgoAAAANSUhEUgAAAAUA..."),
+					new Drink(4, "Coffee", "Hot Beverage", "iVBORw0KGgoAAAANSUhEUgAAAAUA..."),
+					new Drink(5, "Tea", "Hot Beverage", "iVBORw0KGgoAAAANSUhEUgAAAAUA...")
+				};
+
 				return Ok(drinks);
 			}
 			catch (Exception ex)
