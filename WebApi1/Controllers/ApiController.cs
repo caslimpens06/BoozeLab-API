@@ -1,16 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApi1.Model;
 using RenderDrinkAPI.DataAccessLayer;
+using RenderDrinkAPI.Model;
 
-namespace Render_Drink_API.Controllers
+namespace RenderDrinkAPI.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class MyApiController : ControllerBase
+	public class MyAPIController : ControllerBase
 	{
 		private readonly SupabaseService _supabaseService;
 
-		public MyApiController(SupabaseService supabaseService)
+		// Fixed the constructor name typo here
+		public MyAPIController(SupabaseService supabaseService)
 		{
 			_supabaseService = supabaseService;
 		}

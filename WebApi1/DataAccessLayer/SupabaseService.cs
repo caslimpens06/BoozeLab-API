@@ -1,18 +1,18 @@
 ﻿using Npgsql;
-using WebApi1.Model;
+using RenderDrinkAPI.Model;
 
 namespace RenderDrinkAPI.DataAccessLayer;
 public class SupabaseService
 {
 	private readonly string connectionString = "User Id = postgres.hbhcuzgskunhlkgfdmgx; Password=APIDRINK@#$%;Server=aws-0-eu-central-1.pooler.supabase.com;Port=6543;Database=postgres";
 
-	public SupabaseService() {}
+	public SupabaseService() { }
 
 	public List<Drink> GetDrinks()
 	{
 		var drinks = new List<Drink>();
 
-		string query = "SELECT \"Id\", \"Name\", \"Type\", \"ImageBinary\" FROM public.\"Drink\"";
+		string query = "SELECT \"Name\", \"Type\", \"Link\" FROM public.\"Drink\"";
 
 		using (var connection = new NpgsqlConnection(connectionString))
 		{
@@ -24,7 +24,7 @@ public class SupabaseService
 				{
 					while (reader.Read())
 					{
-						Drink drink = new Drink(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
+						Drink drink = new Drink(reader.GetString(0), reader.GetString(1), reader.GetString(2));
 						drinks.Add(drink);
 					}
 				}
