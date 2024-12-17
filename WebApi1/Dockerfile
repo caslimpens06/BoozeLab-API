@@ -4,14 +4,14 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
 # Copy the project file and restore dependencies
-COPY ["TruthOrDrinkAPI.csproj", "./"]
+COPY ["TruthOrDrinkAPI/TruthOrDrinkAPI.csproj", "./"]
 RUN dotnet restore "TruthOrDrinkAPI.csproj"
 
 # Copy the remaining app files
 COPY . .
 
 # Publish the app to /app directory
-RUN dotnet publish "TruthOrDrinkAPI.csproj" -c Release -o /app
+RUN dotnet publish "TruthOrDrinkAPI/TruthOrDrinkAPI.csproj" -c Release -o /app
 
 # Use a smaller runtime image to run the app
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
