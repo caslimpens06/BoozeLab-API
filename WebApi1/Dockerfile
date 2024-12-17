@@ -1,5 +1,5 @@
-# Start with the .NET SDK image to build the app
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+# Use .NET 8.0 SDK to build the app
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /src
 
@@ -13,8 +13,8 @@ COPY . .
 # Publish the app to /app directory
 RUN dotnet publish "WebApi1/RenderDrinkAPI.csproj" -c Release -o /app
 
-# Use a smaller runtime image to run the app
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
+# Use .NET 8.0 runtime to run the app
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 
 WORKDIR /app
 
