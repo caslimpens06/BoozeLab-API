@@ -4,7 +4,7 @@ using WebApi1.Model;
 namespace RenderDrinkAPI.DataAccessLayer;
 public class SupabaseService
 {
-	private readonly string connectionString = "postgresql://postgres.hbhcuzgskunhlkgfdmgx:APIDRINK@#$%@aws-0-eu-central-1.pooler.supabase.com:6543/postgres";
+	private readonly string connectionString = "User Id = postgres.hbhcuzgskunhlkgfdmgx; Password=APIDRINK@#$%;Server=aws-0-eu-central-1.pooler.supabase.com;Port=6543;Database=postgres";
 
 	public SupabaseService() {}
 
