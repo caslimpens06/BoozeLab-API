@@ -4,7 +4,8 @@ using RenderDrinkAPI.Model;
 namespace RenderDrinkAPI.DataAccessLayer;
 public class SupabaseService
 {
-	private readonly string connectionString = "User Id = postgres.hbhcuzgskunhlkgfdmgx; Password=APIDRINK@#$%;Server=aws-0-eu-central-1.pooler.supabase.com;Port=6543;Database=postgres";
+	private readonly string connectionString = "User Id=postgres.hbhcuzgskunhlkgfdmgx;Password=APIDRINK@#$%;Server=aws-0-eu-central-1.pooler.supabase.com;Port=6543;Database=postgres;CommandTimeout=30;Timeout=30;Pooling=true;MaxPoolSize=100;MinPoolSize=10;SSL Mode=Disable;";
+
 
 	public SupabaseService() { }
 
