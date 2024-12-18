@@ -30,5 +30,11 @@ public class Drink
 		_type = type;
 		_link = link;
 	}
+	public Drink(string name, string type)
+	{
+		_name = name;
+		_type = type;
+		_link = "";
+	}
 }
 

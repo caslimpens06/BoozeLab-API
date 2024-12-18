@@ -12,7 +12,7 @@ public class SupabaseService
 	{
 		var drinks = new List<Drink>();
 
-		string query = "SELECT \"Name\", \"Type\", \"Link\" FROM public.\"Drink\"";
+		string query = "SELECT \"Name\", \"Type\" FROM public.\"Drink\"";
 
 		using (var connection = new NpgsqlConnection(connectionString))
 		{
@@ -24,7 +24,7 @@ public class SupabaseService
 				{
 					while (reader.Read())
 					{
-						Drink drink = new Drink(reader.GetString(0), reader.GetString(1), reader.GetString(2));
+						Drink drink = new Drink(reader.GetString(0), reader.GetString(1));
 						drinks.Add(drink);
 					}
 				}
