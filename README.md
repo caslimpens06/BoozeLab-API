@@ -11,3 +11,5 @@ You can also open this link in your browser. The request will take about 5-15 se
 **Reponse**
 Reponse is in JSON format and will look something like this:
 [{"name":"Heineken","type":"Bier"},{"name":"Amstel","type":"Bier"},{"name":"Brand","type":"Bier"}]
+
+**-- The API response is in Dutch --**
