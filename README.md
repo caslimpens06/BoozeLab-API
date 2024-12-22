@@ -7,6 +7,7 @@ Name of the drink (for example: Heineken, Desperados) and Type (for example: bee
 Make a HTTP request to the following adress: https://truthordrinkapi.onrender.com/api/myapi/drinks
 
 You can also open this link in your browser. The request will take about 5-15 seconds, depending on the server availability.
+Sometimes the API will throw "Internal server error: Exception while reading from stream" if there are too many requests.
 
 **Reponse**
 Reponse is in JSON format and will look something like this:
